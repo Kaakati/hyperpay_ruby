@@ -1,5 +1,7 @@
-require 'HyperPay/payment_parameter_builder'
-require 'HyperPay/base'
+# frozen_string_literal: true
+
+require "HyperPay/payment_parameter_builder"
+require "HyperPay/base"
 
 module HyperPay
   class CopyAndPay < HyperPay::Base
@@ -12,7 +14,7 @@ module HyperPay
       builder = PaymentParameterBuilder.new
       yield(builder) if block_given?
       builder.validate! # Perform validations
-      post('/v1/checkouts', builder.parameters)
+      post("/v1/checkouts", builder.parameters)
     end
 
     # Get HyperPay payment status for a given checkout
@@ -35,7 +37,7 @@ module HyperPay
     # @amount Amount
     # @currency Currency
     def capture_payment(entity_id:, checkout_id:, amount:, currency:)
-      post("/v1/payments/#{checkout_id}", { entityId: entity_id, paymentType: 'CP', currency: currency, amount: amount })
+      post("/v1/payments/#{checkout_id}", { entityId: entity_id, paymentType: "CP", currency: currency, amount: amount })
     end
 
     # Refund a payment
@@ -50,7 +52,7 @@ module HyperPay
     # @amount Amount
     # @currency Currency
     def refund_payment(entity_id:, checkout_id:, amount:, currency:)
-      post("/v1/payments/#{checkout_id}", { entityId: entity_id, amount: amount, currency: currency, paymentType: 'RF' })
+      post("/v1/payments/#{checkout_id}", { entityId: entity_id, amount: amount, currency: currency, paymentType: "RF" })
     end
 
     # Reverse a payment
@@ -65,7 +67,7 @@ module HyperPay
     # @entity_id Entity ID that was used to generate the Checkout ID
     # @checkout_id HyperPay Checkout ID
     def reverse_payment(entity_id:, checkout_id:)
-      post("/v1/payments/#{checkout_id}", { entityId: entity_id, paymentType: 'RV' })
+      post("/v1/payments/#{checkout_id}", { entityId: entity_id, paymentType: "RV" })
     end
   end
 end
