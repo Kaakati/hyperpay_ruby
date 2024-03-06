@@ -16,6 +16,8 @@ gem 'HyperPay'
 
 `config/initializers/hyperpay.rb`
 ```ruby
+require 'hyper_pay'
+
 HyperPay.configure do |config|
   config.authorization = "HYPER_PAY_AUTH_TOKEN"
   config.environment = :sandbox
@@ -26,12 +28,6 @@ end
 
 ### Generate Checkout ID
 ```ruby
-  # Generate HyperPay Checkout ID
-  #
-  # Parameters:
-  # @entity_id Entity ID that was used to generate the Checkout ID
-  # @return [Hash] {"result"=>{"code"=>"000.200.100", "description"=>"successfully created checkout"}, "buildNumber"=>"a58fee65f51ad5776b3c44e9929ca39a62a7cb43@2024-03-04 12:55:38 +0000", "timestamp"=>"2024-03-05 13:50:22+0000", "ndc"=>"ABCE449B5FC84ED5A1C7174840C7A3F8.uat01-vm-tx03", "id"=>"ABCE449B5FC84ED5A1C7174840C7A3F8.uat01-vm-tx03"}
-
   checkout = HyperPay::CopyAndPay.new.create_checkout_id do |params|
     params.add "entityId", "HYPER_PAY_ENTITY_ID"
     params.add "customer.email", "john@doe.com"
@@ -63,16 +59,6 @@ end
 
 ### Get Payment Status for Checkout ID
 ```ruby
-  # Get HyperPay payment status for a given checkout
-  #
-  # Parameters:
-  # @entity_id Entity ID that was used to generate the Checkout ID
-  # @checkout_id HyperPay Checkout ID
-  # @return [Hash] {"result"=>{"code"=>"000.200.000", "description"=>"transaction pending"}, "buildNumber"=>"a58fee65f51ad5776b3c44e9929ca39a62a7cb43@2024-03-04 12:55:38 +0000", "timestamp"=>"2024-03-05 13:50:29+0000", "ndc"=>"ABCE449B5FC84ED5A1C7174840C7A3F8.uat01-vm-tx03"}
-  def get_status(entity_id:, checkout_id:)
-    get("/v1/checkouts/#{checkout_id}/payment"+"?entityId=#{entity_id}")
-  end
-
   checkout = HyperPay::CopyAndPay.new.get_status(entity_id: "", checkout_id: "")
   p checkout['id']
   p checkout['result']['code']
@@ -88,7 +74,7 @@ end
 
 ### Capture Payment
 ```ruby
-HyperPay::CopyAndPay.new.capture_payment(entity_id:, checkout_id:, amount:, currency:)
+HyperPay::CopyAndPay.new.capture_payment(entity_id: "", checkout_id: "", amount: "", currency: "")
 ```
 
 ### Refund Payment
