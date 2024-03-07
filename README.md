@@ -1,6 +1,9 @@
 
 # HyperPay Gem
 
+
+![HyperPay Logo](Hyperpay-logo-svg-1.png)
+
 HyperPay is a powerful payment gateway, transforming the online buying experience in the MENA region. HyperPay enable internet businesses to accept and manage payments online, with more flexibility, security and ease.
 
 HyperPay have been processing online payments since 2014. Today, HyperPay go beyond the payment gateway, as we provide merchants across almost every industry, a full-suite of online payment solutions, to serve every need.
