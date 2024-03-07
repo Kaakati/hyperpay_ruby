@@ -178,6 +178,32 @@ base = HyperPay::Base.new
 result = base.interpret_response_code("000.100.1")
 puts result # :transaction_succeeded
 
+case result
+when :transaction_succeeded
+  # Do something
+when :transaction_succeeded_review
+  # Do something
+when :transaction_declined
+  # Do something
+when :transaction_pending
+  # Do something
+when :transaction_failed
+  # Do something
+when :rejected_communication_error
+  # Do something
+when :rejected_system_error
+  # Do something
+when :rejected_for_risk
+  # Do something
+when :reject_blacklist
+  # Do something
+when :reject_risk_validation
+  # Do something
+when :reject_due_validation
+  # Do something
+else
+  # Do something
+end
 ```
 
 ## BackOffice Operations
