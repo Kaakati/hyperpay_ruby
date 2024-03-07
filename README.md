@@ -68,6 +68,7 @@ end
 
 -----
 ### Get Payment Status for Checkout ID
+[Code Interpretation](#response-code-interpretation)
 ```ruby
   checkout = HyperPay::CopyAndPay.new.get_status(entity_id: "", checkout_id: "")
   p checkout['id']
