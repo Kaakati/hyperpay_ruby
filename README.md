@@ -9,7 +9,8 @@ HyperPay have been processing online payments since 2014. Today, HyperPay go bey
 - [Installation](#installation)
 - [Configuration](#configuration)
 - [Usage Example](#usage-example)
-- [Response](#response)
+- [Generate Checkout ID Response](#response)
+- [Payment Success Response](#success-response)
 - [Response Code Interpretation](#response-code-interpretation)
 - [BackOffice Operations](#backoffice-operations)
 
