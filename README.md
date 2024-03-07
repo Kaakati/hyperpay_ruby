@@ -5,6 +5,8 @@ HyperPay is a powerful payment gateway, transforming the online buying experienc
 
 HyperPay have been processing online payments since 2014. Today, HyperPay go beyond the payment gateway, as we provide merchants across almost every industry, a full-suite of online payment solutions, to serve every need.
 
+---
+
 - [HyperPay API Documentation](https://wordpresshyperpay.docs.oppwa.com/)
 - [Installation](#installation)
 - [Configuration](#configuration)
@@ -21,6 +23,8 @@ HyperPay have been processing online payments since 2014. Today, HyperPay go bey
 gem 'HyperPay'
 ```
 
+---
+
 ## Configuration
 
 `config/initializers/hyperpay.rb`
@@ -33,7 +37,9 @@ HyperPay.configure do |config|
 end
 ```
 
-# Usage example
+---
+
+## Usage example
 
 ### Generate Checkout ID
 ```ruby
@@ -179,8 +185,6 @@ end
 
 ## Response Code Interpretation
 
-----
-
 Now, anywhere in your application where you have a response code from HyperPay that you want to interpret, you can easily get its meaning:
 
 ```ruby
@@ -216,9 +220,9 @@ else
 end
 ```
 
-## BackOffice Operations
+---
 
------
+## BackOffice Operations
 
 ### Capture Payment
 ```ruby
