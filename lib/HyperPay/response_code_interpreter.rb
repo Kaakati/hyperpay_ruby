@@ -15,9 +15,6 @@ class ResponseCodeInterpreter
   }.freeze
 
   def self.interpret(code)
-    CONSTANTS.each do |status, regex|
-      return status if code.match?(regex)
-    end
-    :unknown
+    CONSTANTS.find { |_status, regex| code.match?(regex) }&.first || :unknown_code
   end
 end
