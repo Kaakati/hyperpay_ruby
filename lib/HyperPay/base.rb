@@ -2,6 +2,7 @@
 
 require "httparty"
 require "HyperPay/configuration"
+require "HyperPay/response_code_interpreter"
 
 module HyperPay
   class Base
@@ -9,6 +10,10 @@ module HyperPay
 
     def initialize
       self.class.base_uri base_url
+    end
+
+    def interpret_response_code(code)
+      ResponseCodeInterpreter.interpret(code)
     end
 
     private
@@ -47,8 +52,6 @@ module HyperPay
     def base_url
       HyperPay.configuration.environment == :sandbox ? "https://eu-test.oppwa.com" : "https://eu-prod.oppwa.com"
     end
-
-    private
 
     def prepare_headers(options)
       content_type = options.dig(:headers, "Content-Type") == "application/x-www-form-urlencoded" ?
