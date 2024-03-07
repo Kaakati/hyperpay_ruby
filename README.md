@@ -5,7 +5,15 @@ HyperPay is a powerful payment gateway, transforming the online buying experienc
 
 HyperPay have been processing online payments since 2014. Today, HyperPay go beyond the payment gateway, as we provide merchants across almost every industry, a full-suite of online payment solutions, to serve every need.
 
+- [HyperPay API Documentation](https://wordpresshyperpay.docs.oppwa.com/)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Usage Example](#usage-example)
+- [Response](#response)
+- [Response Code Interpretation](#response-code-interpretation)
+- [BackOffice Operations](#backoffice-operations)
 
+---
 ## Installation
 
 ```ruby
