@@ -1,8 +1,13 @@
 
-# HyperPay Gem
+# HyperPay & PeachPayments
 
+This Ruby Gem will work with any of the payment gateways provided by **Open Payment Platform (OPP) COPYandPAY**, such as HyperPay and PeachPayments,
+Initially, it was built to work with HyperPay, but it can be easily used to work with PeachPayments.
 
-![HyperPay Logo](Hyperpay-logo-svg-1.png)
+<img src="peachpayments-logo.svg" height="70">
+<br/>
+<br/>
+<img src="Hyperpay-logo-svg-1.png" height="120">
 
 HyperPay is a powerful payment gateway, transforming the online buying experience in the MENA region. HyperPay enable internet businesses to accept and manage payments online, with more flexibility, security and ease.
 
@@ -11,6 +16,7 @@ HyperPay have been processing online payments since 2014. Today, HyperPay go bey
 ---
 
 - [HyperPay API Documentation](https://wordpresshyperpay.docs.oppwa.com/)
+- [PeachPayments API Documentation](https://peachpayments.docs.oppwa.com/)
 - [Installation](#installation)
 - [Configuration](#configuration)
 - [Usage Example](#usage-example)
